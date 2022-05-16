@@ -150,7 +150,7 @@
             </v-skeleton-loader>
             <v-img v-else data-sizes="auto" class="lazyload" src="https://furrysp.top/usr/uploads/800px-lvyunlu.webp"></v-img>
         </div>
-            <div id="para">
+            <div id="pic">
                 <div class="v-card">
                     <v-skeleton-loader
                             v-if="loading"
@@ -160,7 +160,7 @@
                     </v-skeleton-loader>
                 <v-card-text v-else><strong>《履lǚ云录》</strong>（Elysium Above）是由《履云录》制作组（现叫Sweet Potato Studio）制作的一款AVG游戏，作者为亚罗神虎。AVG版本现已出至第三章。AVG版本现已作为废案，不再更新。 作者现在正在重新开发战棋版游戏，并预期在steam上发行。</v-card-text>
             </div>
-                <div id="hh2">
+                <div id="pic">
                     <v-skeleton-loader
                             v-if="loading"
                             height="94"
@@ -222,42 +222,6 @@
         }
     })
 </script>
-<script>
-    new Vue({
-        el: '#para',
-        vuetify: new Vuetify(),
-        data() {
-            return {
-                loading: false,
-                transition: 'scale-transition'
-            }
-        },
-        mounted() {
-            this.loading = true
-            setTimeout(() => {
-                this.loading = false
-            }, 5000)
-        }
-    })
-</script>
-    <script>
-        new Vue({
-            el: '#hh2',
-            vuetify: new Vuetify(),
-            data() {
-                return {
-                    loading: false,
-                    transition: 'scale-transition'
-                }
-            },
-            mounted() {
-                this.loading = true
-                setTimeout(() => {
-                    this.loading = false
-                }, 5000)
-            }
-        })
-    </script>
 <footer class="mdui-typo">
     <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>
 </footer>

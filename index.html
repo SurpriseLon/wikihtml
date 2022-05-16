@@ -140,22 +140,41 @@
 </script>
 <div class="mdui-container mdui-p-t-3">
     <div class="mdui-col">
-        <div id="app">
+        <div id="pic">
         <div class="v-card">
             <v-skeleton-loader
-                    :loading="loading"
-                    :transition="transition"
+                    v-if="loading"
                     height="94"
-                    type="list-item-two-line"
+                    type="image"
             >
-                    <v-img data-sizes="auto" class="lazyload" src="https://furrysp.top/file/800px-lvyunlu.webp"></v-img>
             </v-skeleton-loader>
+            <v-img v-else data-sizes="auto" class="lazyload" src="https://furrysp.top/usr/uploads/800px-lvyunlu.webp"></v-img>
+        </div>
+            <div id="para">
+                <div class="v-card">
+                    <v-skeleton-loader
+                            v-if="loading"
+                            height="94"
+                            type="paragraph"
+                    >
+                    </v-skeleton-loader>
+                <v-card-text v-else><strong>《履lǚ云录》</strong>（Elysium Above）是由《履云录》制作组（现叫Sweet Potato Studio）制作的一款AVG游戏，作者为亚罗神虎。AVG版本现已出至第三章。AVG版本现已作为废案，不再更新。 作者现在正在重新开发战棋版游戏，并预期在steam上发行。</v-card-text>
             </div>
-                <div class="mdui-card-content">
-                    <strong>《履lǚ云录》</strong>（Elysium Above）是由《履云录》制作组（现叫Sweet Potato Studio）制作的一款AVG游戏，作者为亚罗神虎。AVG版本现已出至第三章。AVG版本现已作为废案，不再更新。 作者现在正在重新开发战棋版游戏，并预期在steam上发行。
+                <div id="hh2">
+                    <v-skeleton-loader
+                            v-if="loading"
+                            height="94"
+                            type="heading"
+                    >
+                    </v-skeleton-loader>
+                <h2 v-else>
+                    <i class="mdui-list-item-icon mdui-icon fa-duotone fa-cloud-meatball"></i> 游戏背景
+                </h2>
+            </div>
                 </div>
                 </div>
-    </div></div>
+        </div>
+    </div>
 <div class="mdx-post-money">
     <center><button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '赞赏'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-list-item-icon mdui-icon fa-brands fa-weixin"></i></button>
         <div class="mdui-menu" id="mdx-qrcode-money" style="transform-origin: 50% 0px; position: fixed;"> <img alt="赞赏" src="https://s2.loli.net/2022/03/16/9exFly4Ym3nAavw.png"></div>
@@ -187,10 +206,58 @@
 </script>
 <script>
     new Vue({
-        el: '#app',
+        el: '#pic',
         vuetify: new Vuetify(),
+        data() {
+            return {
+                loading: false,
+                transition: 'scale-transition'
+            }
+        },
+        mounted() {
+            this.loading = true
+            setTimeout(() => {
+                this.loading = false
+            }, 5000)
+        }
     })
 </script>
+<script>
+    new Vue({
+        el: '#para',
+        vuetify: new Vuetify(),
+        data() {
+            return {
+                loading: false,
+                transition: 'scale-transition'
+            }
+        },
+        mounted() {
+            this.loading = true
+            setTimeout(() => {
+                this.loading = false
+            }, 5000)
+        }
+    })
+</script>
+    <script>
+        new Vue({
+            el: '#hh2',
+            vuetify: new Vuetify(),
+            data() {
+                return {
+                    loading: false,
+                    transition: 'scale-transition'
+                }
+            },
+            mounted() {
+                this.loading = true
+                setTimeout(() => {
+                    this.loading = false
+                }, 5000)
+            }
+        })
+    </script>
 <footer class="mdui-typo">
     <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>
 </footer>

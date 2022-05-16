@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>DragonJay的小铺子</title>
+    <link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css"/>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../node_modules/@fancyapps/ui/dist/fancybox.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <link href="../node_modules/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/aplayer/dist/APlayer.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE107CW8T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8ZE107CW8T');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8434505608196685"
+            crossorigin="anonymous"></script>
+    <script src="../node_modules/qrcodejs2/qrcode.js"></script>
+    <script src="../node_modules/aplayer/dist/APlayer.min.js"></script>
+    <style>
+        video#bgvid {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            -ms-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+        .mdui-card {
+            border-radius:6px
+        }
+        .mdui-dialog {
+            border-radius:6px
+        }
+        .mdui-btn-block {
+            border-radius:6px
+        }
+        .mdui-btn {
+            border-radius:6px
+        }
+        .mdui-video-fluid {
+            border-radius:6px
+        }
+        .mdui-menu-open {
+            border-radius:6px
+        }
+        .mdui-table-fluid {
+            border-radius:6px
+        }
+        .mdui-panel-item {
+            border-radius:6px
+        }
+        .mdui-drawer {
+            box-shadow:-1px 10px 10px 0 rgb(60 64 67/30%), 0 1px 3px 1px rgb(60 64 67/15%);
+            width:256px
+        }
+        .mdui-drawer, footer {
+            backdrop-filter:blur(15px)brightness(110%)
+        }
+        footer {
+            position:fixed;
+            bottom:0px;
+            width:100%;
+            text-align:center;
+            padding:8px
+        }
+        .mdui-textfield {
+            padding-top:0px;
+            padding-bottom:0px
+        }
+        .mdui-btn, .mdui-fab {
+            text-transform:none
+        }
+    </style>
+</head>
+<body id="capture" class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-loaded" style="">
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script src="../node_modules/vuetify/dist/vuetify.js"></script>
+<header class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+        <button mdui-drawer="{target: '#main-drawer'}" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content:'菜单'}"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-bars"></i></button>
+        <a href="./" class="mdui-typo-headline" mdui-tooltip="{content:'DragonJay ⚡️永远滴神⚡️'}">DragonJay的小铺子</a>
+        <div class="mdui-toolbar-spacer"></div>
+        <button class="mdui-btn mdui-btn-icon" mdui-menu="{target: '#qrcode'}" mdui-tooltip="{content: '在其他设备上继续阅读'}" id="oth-div"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-laptop-mobile"></i></button>
+        <div class="mdui-menu" id="qrcode" title="https://furrysp.top/" style="transform-origin: 100% 0px; position: fixed;"><canvas width="150" height="150" style="display: none;"></canvas><img style="display: block;" src=""></div>
+        <script>
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: "https://furrysp.top",
+                width: 150,
+                height: 150,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        </script>
+        <a onclick="javascript:window.location.reload()" class="mdui-btn mdui-btn-icon"  mdui-tooltip="{content:'刷新'}"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-arrow-rotate-right"></i></a>
+    </div>
+</header>
+<div class="mdui-drawer mdui-drawer-close" id="main-drawer">
+    <div class="mdui-list">
+        <a href="./game" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-game-console-handheld"></i><div class="mdui-list-item-content"> 游戏</div></a>
+        <a onclick="Warring()" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-skull-crossbones"></i><div class="mdui-list-item-content">黑名单</div></a>
+        <a href="./School-notes" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-note"></i><div class="mdui-list-item-content">学习笔记</div></a>
+        <a onclick="Warring()" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-brands fa-wikipedia-w"></i><div class="mdui-list-item-content">知识扩展</div></a>
+        <a onclick="Warring()" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-link"></i><div class="mdui-list-item-content">友情链接</div></a>
+        <div class="mdui-divider"></div>
+        <a onclick="window.open('https://pan.furrysp.top/');" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-chart-network"></i><div class="mdui-list-item-content">游戏网盘</div></a>
+        <a onclick="window.open('https://t.me/+frQMWqK0suc0OGZl');" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-brands fa-telegram"></i><div class="mdui-list-item-content">TG群</div></a>
+        <a onclick="window.open('https://t.me/DragonJay');" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-brands fa-telegram"></i><div class="mdui-list-item-content">TG</div></a>
+        <a onclick="window.open('http://wpa.qq.com/msgrd?v=3&uin=410714630&site=qq&menu=yes');" class="mdui-list-item"><i class="mdui-list-item-icon mdui-icon fa-brands fa-qq"></i><div class="mdui-list-item-content">QQ</div></a>
+    </div>
+</div>
+<script>
+    function Warring() {
+        Swal.fire({
+            icon: 'warning',
+            title: '正在施工中……',
+            text: '请不要太捉急',
+        })
+    }
+</script>
+<div class="mdui-container mdui-p-t-3">
+    <div class="mdui-col">
+        <div class="v-card">
+            <v-skeleton-loader
+                    :loading="loading"
+                    :transition="transition"
+                    height="94"
+                    type="list-item-two-line"
+            >
+                    <v-img data-sizes="auto" class="lazyload" src="https://furrysp.top/file/800px-lvyunlu.webp"></v-img>
+            </v-skeleton-loader>
+                <div class="mdui-card-content">
+                    <strong>《履lǚ云录》</strong>（Elysium Above）是由《履云录》制作组（现叫Sweet Potato Studio）制作的一款AVG游戏，作者为亚罗神虎。AVG版本现已出至第三章。AVG版本现已作为废案，不再更新。 作者现在正在重新开发战棋版游戏，并预期在steam上发行。
+                </div>
+                </div>
+        </div></div>
+<div class="mdx-post-money">
+    <center><button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '赞赏'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-list-item-icon mdui-icon fa-brands fa-weixin"></i></button>
+        <div class="mdui-menu" id="mdx-qrcode-money" style="transform-origin: 50% 0px; position: fixed;"> <img alt="赞赏" src="https://s2.loli.net/2022/03/16/9exFly4Ym3nAavw.png"></div>
+    </center></div>
+<div id="tcomment"></div>
+<script src="https://cdn.jsdelivr.net/npm/twikoo@1.5.9/dist/twikoo.all.min.js"></script>
+<script>
+    twikoo.init({
+        envId: 'https://cs-com.vercel.app/',
+        el: '#tcomment',
+    })
+</script>
+<div id="indic" style="transform: scale(1) translateZ(0px);"><canvas width="59" height="59" style="width: 59px; height: 59px;"></canvas></div>
+<button onclick="topFunction()" id="myBtn" mdui-tooltip="{content:'回到顶部'}" class="mdui-fab mdui-color-theme-accent mdui-fab-fixed scrollToTop mdui-ripple"><i class="mdui-list-item-icon mdui-icon fa-duotone fa-computer-mouse-scrollwheel"></i></button>
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {console.log(121);
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<footer class="mdui-typo">
+    <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>
+</footer>
+<script src="https://cdn.jsdelivr.net/gh/SurpriseLon/Fontawesome-6@main/js/all.js" async=""></script>
+<script src="../node_modules/@fancyapps/ui/dist/fancybox.umd.js" async=""></script>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js" async=""></script>
+<link rel="prefetch" as="script" href="../node_modules/html2canvas/dist/html2canvas.min.js" async="">
+<script src="../node_modules/lazysizes/lazysizes.min.js" async=""></script>
+<script src="../node_modules/clipboard/dist/clipboard.min.js" async=""></script>
+<script src="../node_modules/sweetalert2/dist/sweetalert2.js" async=""></script>
+<script src="../node_modules/mdui/dist/js/mdui.min.js" async=""></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js" async=""></script>
+</body>
+</html>

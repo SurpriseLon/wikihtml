@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>DragonJay的小铺子</title>
     <link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css"/>
+    <link rel="stylesheet" href="https://cdn.w3cbus.com/mdui.org/static/theme/material/index.e8409b3c.css"/>
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../node_modules/@fancyapps/ui/dist/fancybox.css"/>
     <link href="../node_modules/vuetify/dist/vuetify.min.css" rel="stylesheet">
@@ -378,219 +379,71 @@
                         </div>
                     </div>
                     <div id="player">
-                    <script>
-                        const ap = new APlayer({
-                            container: document.getElementById('player'),
-                            autoplay: true,
-                            theme: '#5a5d68',
-                            loop: 'all',
-                            order: 'random',
-                            preload: 'auto',
-                            volume: 0.7,
-                            mutex: true,
-                            listFolded: false,
-                            listMaxHeight: 90,
-                            audio: [
-                                {
-                                    name: '履云',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/01.%20KITAstudio%20-%20%e5%b1%a5%e4%ba%91.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '梦萦',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/02.%20KITAstudio%20-%20%e6%a2%a6%e8%90%a6.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '羁旅',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/03.%20KITAstudio%20-%20%e7%be%81%e6%97%85.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '王庭',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/04.%20KITAstudio%20-%20%e7%8e%8b%e5%ba%ad.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '缨络',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/05.%20KITAstudio%20-%20%e7%bc%a8%e7%bb%9c.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '神兵',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/06.%20KITAstudio%20-%20%e7%a5%9e%e5%85%b5.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '乐游',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/07.%20KITAstudio%20-%20%e4%b9%90%e6%b8%b8.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '蝶舞',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/08.%20KITAstudio%20-%20%e8%9d%b6%e8%88%9e.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '雨',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/09.%20KITAstudio%20-%20%e9%9b%a8.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '远念',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/10.%20KITAstudio%20-%20%e8%bf%9c%e5%bf%b5.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '竹趣',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/11.%20KITAstudio%20-%20%e7%ab%b9%e8%b6%a3.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '雍华',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/12.%20KITAstudio%20-%20%e9%9b%8d%e5%8d%8e.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '九市',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/13.%20KITAstudio%20-%20%e4%b9%9d%e5%b8%82.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '谧夜',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/14.%20KITAstudio%20-%20%e8%b0%a7%e5%a4%9c.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '浄神',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/15.%20KITAstudio%20-%20%e6%b5%84%e7%a5%9e.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '霿乱',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/16.%20KITAstudio%20-%20%e9%9c%bf%e4%b9%b1.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '幽影',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/17.%20KITAstudio%20-%20%e5%b9%bd%e5%bd%b1.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '兵戎',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/18.%20KITAstudio%20-%20%e5%85%b5%e6%88%8e.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '魆旃',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/19.%20KITAstudio%20-%20%e9%ad%86%e6%97%83.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '瀛泽',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/20.%20KITAstudio%20-%20%e7%80%9b%e6%b3%bd.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '寇势',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/21.%20KITAstudio%20-%20%e5%af%87%e5%8a%bf.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '卷箨',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/22.%20KITAstudio%20-%20%e5%8d%b7%e7%ae%a8.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '战幕',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/23.%20KITAstudio%20-%20%e6%88%98%e5%b9%95.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '历楚',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/24.%20KITAstudio%20-%20%e5%8e%86%e6%a5%9a.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '破竹',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/25.%20KITAstudio%20-%20%e7%a0%b4%e7%ab%b9.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '祈蒙',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/26.%20KITAstudio%20-%20%e7%a5%88%e8%92%99.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '屺岵',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/27.%20KITAstudio%20-%20%e5%b1%ba%e5%b2%b5.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '夜阙',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/28.%20KITAstudio%20-%20%e5%a4%9c%e9%98%99.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '阑珊',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/29.%20KITAstudio%20-%20%e9%98%91%e7%8f%8a.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '枯竹',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/30.%20KITAstudio%20-%20%e6%9e%af%e7%ab%b9.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '仗剑',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/31.%20KITAstudio%20-%20%e4%bb%97%e5%89%91.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                },
-                                {
-                                    name: '合简',
-                                    artist: 'KITAstudio',
-                                    url: 'https://cdn.furrysp.top/32.%20KITAstudio%20-%20%e5%90%88%e7%ae%80.mp3',
-                                    cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
-                                }
-                            ]
-                        });
-                    </script>
+              </div>
+                    <div id="pic">
+                        <div class="v-card">
+                            <v-skeleton-loader
+                                    v-if="loading"
+                                    height="94"
+                                    type="heading"
+                            >
+                            </v-skeleton-loader>
+                            <v-card-title v-else>
+                                <h3><i class="mdui-list-item-icon mdui-icon fa-duotone fa-greater-than-equal"></i> 相关链接</h3>
+                            </v-card-title>
                         </div>
+                    </div>
+                    <div id="pic">
+                        <div class="v-card">
+                            <v-skeleton-loader
+                                    v-if="loading"
+                                    height="94"
+                                    type="list-item-two-line"
+                            >
+                            </v-skeleton-loader>
+                    <ul class="mdui-list" v-else>
+                        <li class="mdui-list-item mdui-ripple">
+                            <div class="mdui-list-item-avatar">
+                                <img data-sizes="auto" data-src="https://s2.loli.net/2022/04/23/ZSr6uBqFbVExHwf.png" class="lazyload"/>
+                            </div>
+                            <div class="mdui-list-item-content" onclick="window.open('https://twitter.com/elysiumabovee');">Elysium Above</div>
+                            <i class="mdui-list-item-icon mdui-icon fa-brands fa-twitter"></i>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple">
+                            <div class="mdui-list-item-avatar">
+                                <img data-sizes="auto" data-src="https://s3.bmp.ovh/imgs/2022/04/23/a9803655b08c852a.png" class="lazyload"/>
+                            </div>
+                            <div class="mdui-list-item-content" onclick="window.open('https://zhongchou.modian.com/item/99058.html');">亚罗神虎</div>
+                            <i class="mdui-list-item-icon mdui-icon fa-duotone fa-soft-serve"></i>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple">
+                            <div class="mdui-list-item-avatar">
+                                <img data-sizes="auto" data-src="https://s2.loli.net/2022/04/23/hs1EbKtlYx93qSz.png" class="lazyload"/>
+                            </div>
+                            <div class="mdui-list-item-content" onclick="window.open('https://weibo.com/u/5943309927');">履云录</div>
+                            <i class="mdui-list-item-icon mdui-icon fa-brands fa-weibo"></i>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple">
+                            <div class="mdui-list-item-icon mdui-icon mdui-list-item-avatar">
+                                <img data-sizes="auto" data-src="https://s2.loli.net/2022/04/23/hs1EbKtlYx93qSz.png" class="lazyload"/>
+                            </div>
+                            <div class="mdui-list-item-content" onclick="window.open('https://www.facebook.com/lvyunluTW/');">履云录</div>
+                            <i class="mdui-list-item-icon mdui-icon fa-brands fa-facebook"></i>
+                        </li>
+                        <li class="mdui-list-item mdui-ripple">
+                            <div class="mdui-list-item-avatar">
+                                <img data-sizes="auto" data-src="https://s2.loli.net/2022/04/23/PARTO4wfJsz5Udr.png" class="lazyload"/>
+                            </div>
+                            <div class="mdui-list-item-content" onclick="window.open('https://tieba.baidu.com/f?kw=%E5%B1%A5%E4%BA%91%E5%BD%95');">履云录吧</div>
+                            <i class="mdui-list-item-icon mdui-icon fa-duotone fa-paw"></i>
+                        </li>
+                    </ul>
                 </div>
-                  </div>
-                   </div>
-        </div>
+                    </div>
+                </div>
+   </div>
+ </div>
+</div>
 <div class="mdx-post-money">
     <center><button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '赞赏'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-list-item-icon mdui-icon fa-brands fa-weixin"></i></button>
         <div class="mdui-menu" id="mdx-qrcode-money" style="transform-origin: 50% 0px; position: fixed;"> <img alt="赞赏" src="https://s2.loli.net/2022/03/16/9exFly4Ym3nAavw.png"></div>
@@ -622,22 +475,230 @@
 </script>
 <script>
     var one = new Vue({
-            el: '#pic',
-            vuetify: new Vuetify(),
-            dark: true,
-            data() {
-                return {
-                    loading: false,
-                    transition: 'scale-transition'
-                }
-            },
-            mounted() {
-                this.loading = true
-                setTimeout(() => {
-                    this.loading = false
-                }, 5000)
+        el: '#pic',
+        vuetify: new Vuetify(),
+        dark: true,
+        data() {
+            return {
+                loading: false,
+                transition: 'scale-transition'
             }
-        });
+        },
+        mounted() {
+            this.loading = true
+            setTimeout(() => {
+                this.loading = false
+            }, 5000)
+        },
+    })
+</script>
+<script>
+    const ap = new APlayer({
+        container: document.getElementById('player'),
+        autoplay: true,
+        theme: '#5a5d68',
+        loop: 'all',
+        order: 'random',
+        preload: 'auto',
+        volume: 0.7,
+        mutex: true,
+        listFolded: false,
+        listMaxHeight: 90,
+        audio: [
+            {
+                name: '履云',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/01.%20KITAstudio%20-%20%e5%b1%a5%e4%ba%91.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '梦萦',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/02.%20KITAstudio%20-%20%e6%a2%a6%e8%90%a6.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '羁旅',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/03.%20KITAstudio%20-%20%e7%be%81%e6%97%85.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '王庭',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/04.%20KITAstudio%20-%20%e7%8e%8b%e5%ba%ad.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '缨络',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/05.%20KITAstudio%20-%20%e7%bc%a8%e7%bb%9c.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '神兵',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/06.%20KITAstudio%20-%20%e7%a5%9e%e5%85%b5.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '乐游',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/07.%20KITAstudio%20-%20%e4%b9%90%e6%b8%b8.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '蝶舞',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/08.%20KITAstudio%20-%20%e8%9d%b6%e8%88%9e.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '雨',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/09.%20KITAstudio%20-%20%e9%9b%a8.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '远念',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/10.%20KITAstudio%20-%20%e8%bf%9c%e5%bf%b5.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '竹趣',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/11.%20KITAstudio%20-%20%e7%ab%b9%e8%b6%a3.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '雍华',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/12.%20KITAstudio%20-%20%e9%9b%8d%e5%8d%8e.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '九市',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/13.%20KITAstudio%20-%20%e4%b9%9d%e5%b8%82.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '谧夜',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/14.%20KITAstudio%20-%20%e8%b0%a7%e5%a4%9c.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '浄神',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/15.%20KITAstudio%20-%20%e6%b5%84%e7%a5%9e.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '霿乱',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/16.%20KITAstudio%20-%20%e9%9c%bf%e4%b9%b1.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '幽影',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/17.%20KITAstudio%20-%20%e5%b9%bd%e5%bd%b1.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '兵戎',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/18.%20KITAstudio%20-%20%e5%85%b5%e6%88%8e.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '魆旃',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/19.%20KITAstudio%20-%20%e9%ad%86%e6%97%83.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '瀛泽',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/20.%20KITAstudio%20-%20%e7%80%9b%e6%b3%bd.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '寇势',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/21.%20KITAstudio%20-%20%e5%af%87%e5%8a%bf.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '卷箨',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/22.%20KITAstudio%20-%20%e5%8d%b7%e7%ae%a8.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '战幕',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/23.%20KITAstudio%20-%20%e6%88%98%e5%b9%95.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '历楚',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/24.%20KITAstudio%20-%20%e5%8e%86%e6%a5%9a.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '破竹',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/25.%20KITAstudio%20-%20%e7%a0%b4%e7%ab%b9.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '祈蒙',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/26.%20KITAstudio%20-%20%e7%a5%88%e8%92%99.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '屺岵',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/27.%20KITAstudio%20-%20%e5%b1%ba%e5%b2%b5.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '夜阙',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/28.%20KITAstudio%20-%20%e5%a4%9c%e9%98%99.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '阑珊',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/29.%20KITAstudio%20-%20%e9%98%91%e7%8f%8a.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '枯竹',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/30.%20KITAstudio%20-%20%e6%9e%af%e7%ab%b9.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '仗剑',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/31.%20KITAstudio%20-%20%e4%bb%97%e5%89%91.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            },
+            {
+                name: '合简',
+                artist: 'KITAstudio',
+                url: 'https://cdn.furrysp.top/32.%20KITAstudio%20-%20%e5%90%88%e7%ae%80.mp3',
+                cover: 'https://f4.bcbits.com/img/a3527337033_16.jpg'
+            }
+        ]
+    });
 </script>
 <footer class="mdui-typo">
     <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>

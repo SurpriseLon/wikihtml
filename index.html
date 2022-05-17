@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css"/>
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../node_modules/@fancyapps/ui/dist/fancybox.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
     <link href="../node_modules/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
@@ -287,10 +286,41 @@
                             </v-card-text>
                         </div>
                     </div>
-                </div>
-                </div>
-        </div>
-</div>
+                    <div id="pic">
+                        <div class="v-card">
+                            <v-skeleton-loader
+                                    v-if="loading"
+                                    height="94"
+                                    type="heading"
+                            >
+                            </v-skeleton-loader>
+                            <v-card-title v-else>
+                                <h3><i class="mdui-list-item-icon mdui-icon fa-duotone fa-solar-system"></i> 系统需求</h3>
+                            </v-card-title>
+                        </div>
+                    </div>
+                    <div id="pic">
+                        <v-skeleton-loader
+                                v-if="loading"
+                                height="94"
+                                type="table-heading"
+                        >
+                        </v-skeleton-loader>
+                        <div class="mdui-panel" mdui-panel v-else>
+                            <div class="mdui-panel-item">
+                                <div class="mdui-panel-item-header">
+                                    <div class="mdui-panel-item-title">最低配置</div>
+                                    <i class="mdui-list-item-icon mdui-icon fa-duotone fa-expand"></i>
+                                </div>
+                                <div class="mdui-panel-item-body">
+                                    <p>操作系统: Windows 7及以上</p>
+                                    <p>内存: 4 GB RAM</p>
+                                    <p>存储空间: 需要 3 GB 可用空间</p>
+                                </div>
+                            </div>
+                        </div></div>
+                </div></div>
+    </div></div>
 <div class="mdx-post-money">
     <center><button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '赞赏'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-list-item-icon mdui-icon fa-brands fa-weixin"></i></button>
         <div class="mdui-menu" id="mdx-qrcode-money" style="transform-origin: 50% 0px; position: fixed;"> <img alt="赞赏" src="https://s2.loli.net/2022/03/16/9exFly4Ym3nAavw.png"></div>
@@ -338,14 +368,6 @@
                 }, 5000)
             }
         });
-
-    var two = new Vue({
-        el: '#ratt',
-        vuetify: new Vuetify(),
-        data: () => ({
-            rating: 3,
-        })
-    });
 </script>
 <footer class="mdui-typo">
     <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>

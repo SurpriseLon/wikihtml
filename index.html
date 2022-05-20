@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>DragonJay的小铺子</title>
     <link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css"/>
-    <link rel="stylesheet" href="https://cdn.w3cbus.com/mdui.org/static/theme/material/index.e8409b3c.css"/>
+    <link rel="stylesheet" href="../node_modules/upvote/dist/upvotejs/upvotejs.css">
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../node_modules/@fancyapps/ui/dist/fancybox.css"/>
     <link href="../node_modules/vuetify/dist/vuetify.min.css" rel="stylesheet">
@@ -16,6 +16,8 @@
     <link href="https://fastly.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../node_modules/aplayer/dist/APlayer.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="../node_modules/upvote/dist/upvotejs/upvotejs.vanilla.js"></script>
+    <script src="../node_modules/upvote/dist/upvotejs/upvotejs.jquery.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE107CW8T"></script>
     <script>
@@ -140,7 +142,7 @@
 </script>
 <div class="mdui-container mdui-p-t-3">
     <div class="mdui-col">
-        <div id="pic">
+        <v-card id="pic">
         <div class="v-card">
             <v-skeleton-loader
                     v-if="loading"
@@ -416,42 +418,55 @@
                         </li>
                     </ul>
                     </div>
-                    <v-card>
-                        <v-row>
-                        <v-avatar>
-                            <v-img
-                                    src="https://img1.doubanio.com/icon/up143172430-61.jpg"
-                            ></v-img>
-                        </v-avatar>
-                            <v-card-title>
-                                Rominwolf
-                            </v-card-title>
+            <v-card class="d-inline-block mx-auto">
+                <v-row>
+                    <v-avatar>
+                        <v-img
+                                src="https://img1.doubanio.com/icon/up143172430-61.jpg"
+                        ></v-img>
+                    </v-avatar>
+                    <v-card-title>
+                        Rominwolf
+                    </v-card-title>
+                </v-row>
+                <v-card-subtitle>
+                    来自豆瓣
+                </v-card-subtitle>
+                <v-container>
+                    <v-row justify="space-between">
+                        <v-row
+                                class="flex-column ma-0 fill-height"
+                                justify="center"
+                        >
+                            <v-card-actions>
+                                <div id="basic" class="upvotejs">
+                                    <v-col class="px-0">
+                                        <v-btn class="upvote">
+                                            <i class="mdui-list-item-icon mdui-icon fa-solid fa-angle-up"></i>
+                                        </v-btn>
+                                    </v-col>
+                                    <v-col class="px-0">
+                                        <span class="count">0</span>
+                                    </v-col>
+                                    <v-col class="px-0">
+                                        <v-btn class="downvote">
+                                            <i class="mdui-list-item-icon mdui-icon fa-solid fa-angle-down"></i>
+                                        </v-btn>
+                                    </v-col>
+                                </div>
+                            </v-card-actions>
+                            <v-col cols="auto">
+                                <v-card-text>
+                                    没什么好说的，必须用蓝色修改器支持一下。
+                                </v-card-text>
+                            </v-col>
                         </v-row>
-                        <v-card-subtitle>
-                            来自豆瓣
-                        </v-card-subtitle>
-                        <v-card-text>
-                            没什么好说的，必须用蓝色修改器支持一下。
-                        </v-card-text>
-                        <v-card-actions>
-                            <div class="vote">
-                                <v-btn class="up-vote">
-                                <span>
-                                    <i class="mdui-list-item-icon mdui-icon fa-solid fa-angle-up"></i> 赞同
-                                    </span>
-                                <span class="number">0</span>
-                                </v-btn>
-                                <v-btn class="down-vote">
-                                <span>
-                                    <i class="mdui-list-item-icon mdui-icon fa-solid fa-angle-down"></i>
-                                    </span>
-                                </v-btn>
-                            </div>
-                        </v-card-actions>
-                    </v-card>
-                        </div>
-                    </div>
-                </div>
+                    </v-row>
+                </v-container>
+            </v-card>
+        </v-card>
+    </div>
+</div>
 <div class="mdx-post-money">
     <center><button mdui-menu="{target: '#mdx-qrcode-money',align: 'center'}" mdui-tooltip="{content: '赞赏'}" class="mdui-btn mdui-btn-icon mdui-color-theme-accent mdui-ripple"><i class="mdui-list-item-icon mdui-icon fa-brands fa-weixin"></i></button>
         <div class="mdui-menu" id="mdx-qrcode-money" style="transform-origin: 50% 0px; position: fixed;"> <img alt="赞赏" src="https://s2.loli.net/2022/03/16/9exFly4Ym3nAavw.png"></div>
@@ -500,12 +515,22 @@
         },
     });
 </script>
+<script>
+    const v1 = Upvote.create('basic');
+</script>
 <footer class="mdui-typo">
     <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>
 </footer>
+<div id="templates" class="hidden">
+    <div class="upvotejs">
+        <a class="upvote" title="这个评论针不戳"></a>
+        <span class="count" title="总票数"></span>
+        <a class="downvote" title="无用"></a>
+    </div>
+</div>
+
 <script src="https://fastly.jsdelivr.net/gh/SurpriseLon/Fontawesome-6@main/js/all.js" async=""></script>
 <script src="../lvyunlu.js" async=""></script>
-<script src="../vote.js" async=""></script>
 <script src="../node_modules/@fancyapps/ui/dist/fancybox.umd.js" async=""></script>
 <link rel="prefetch" as="script" href="../node_modules/html2canvas/dist/html2canvas.min.js" async="">
 <script src="../node_modules/lazysizes/lazysizes.min.js" async=""></script>

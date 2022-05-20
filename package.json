@@ -9,6 +9,10 @@
     "node-gyp": "^9.0.0",
     "qrcodejs2": "^0.0.2",
     "sweetalert2": "^11.4.14",
+    "upvote": "^1.1.1",
     "vuetify": "^2.6.5"
+  },
+  "devDependencies": {
+    "qunit": "^2.19.1"
   }
 }

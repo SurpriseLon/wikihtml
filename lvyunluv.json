@@ -1,0 +1,100 @@
+{
+    "code": 0,
+    "message": "0",
+    "ttl": 1,
+    "data": {
+        "bvid": "BV1MA411H73z",
+        "aid": 331111911,
+        "videos": 1,
+        "tid": 17,
+        "tname": "单机游戏",
+        "copyright": 1,
+        "pic": "http://i0.hdslb.com/bfs/archive/3a53d4b2ae4824c7225d4b2b00b0f16ff709fca5.jpg",
+        "title": "原创独立战棋游戏《履云录》的PV",
+        "pubdate": 1610083815,
+        "ctime": 1610083815,
+        "desc": "\\求三连/\\求三连/\\求三连/\n\nhttps://store.steampowered.com/app/1509450/Elysium_Above/\n欢迎前去以上链接或在Steam搜索“履云录”来下载试玩版！敬请将《履云录》加入愿望单❤\n\nhttps://zhongchou.modian.com/item/99058.html\n欢迎点击以上链接，于摩点众筹【看好】我们的创意！我们将于近期在摩点发起众筹——请大家多多支持。\n\n《履云录》是一款使用Unity3D引擎开发的原创的战棋游戏。\n游戏中，玩家将扮演东海边小国——“帛”的初阶指挥官，于山雨欲来、乌云压城之时通过巧妙地排兵布阵和高超的指挥来帮助刚刚复国的帛国抵挡环伺的强敌的侵攻，一步一步探求各方势力的所求并最终做出抉择将故事引向不同的方向。\n\n欢迎各位的批评和指教，也欢迎加入官方粉丝群：521748761 主催每天都会直播填坑的~",
+        "desc_v2": [
+            {
+                "raw_text": "\\求三连/\\求三连/\\求三连/\n\nhttps://store.steampowered.com/app/1509450/Elysium_Above/\n欢迎前去以上链接或在Steam搜索“履云录”来下载试玩版！敬请将《履云录》加入愿望单❤\n\nhttps://zhongchou.modian.com/item/99058.html\n欢迎点击以上链接，于摩点众筹【看好】我们的创意！我们将于近期在摩点发起众筹——请大家多多支持。\n\n《履云录》是一款使用Unity3D引擎开发的原创的战棋游戏。\n游戏中，玩家将扮演东海边小国——“帛”的初阶指挥官，于山雨欲来、乌云压城之时通过巧妙地排兵布阵和高超的指挥来帮助刚刚复国的帛国抵挡环伺的强敌的侵攻，一步一步探求各方势力的所求并最终做出抉择将故事引向不同的方向。\n\n欢迎各位的批评和指教，也欢迎加入官方粉丝群：521748761 主催每天都会直播填坑的~",
+                "type": 1,
+                "biz_id": 0
+            }
+        ],
+        "state": 0,
+        "duration": 144,
+        "rights": {
+            "bp": 0,
+            "elec": 0,
+            "download": 1,
+            "movie": 0,
+            "pay": 0,
+            "hd5": 1,
+            "no_reprint": 1,
+            "autoplay": 1,
+            "ugc_pay": 0,
+            "is_cooperation": 0,
+            "ugc_pay_preview": 0,
+            "no_background": 0,
+            "clean_mode": 0,
+            "is_stein_gate": 0,
+            "is_360": 0,
+            "no_share": 0
+        },
+        "owner": {
+            "mid": 415908610,
+            "name": "亚罗神虎",
+            "face": "http://i1.hdslb.com/bfs/face/9cc51bbb40b73c4b5a775cac0cdc140bd79e2233.jpg"
+        },
+        "stat": {
+            "aid": 331111911,
+            "view": 14368,
+            "danmaku": 51,
+            "reply": 224,
+            "favorite": 479,
+            "coin": 812,
+            "share": 174,
+            "now_rank": 0,
+            "his_rank": 0,
+            "like": 1326,
+            "dislike": 0,
+            "evaluation": "",
+            "argue_msg": ""
+        },
+        "dynamic": "",
+        "cid": 279521166,
+        "dimension": {
+            "width": 1920,
+            "height": 1080,
+            "rotate": 0
+        },
+        "premiere": null,
+        "teenage_mode": 0,
+        "no_cache": false,
+        "pages": [
+            {
+                "cid": 279521166,
+                "page": 1,
+                "from": "vupload",
+                "part": "PV_CN_final_ver02_30fps_1080p",
+                "duration": 144,
+                "vid": "",
+                "weblink": "",
+                "dimension": {
+                    "width": 1920,
+                    "height": 1080,
+                    "rotate": 0
+                }
+            }
+        ],
+        "subtitle": {
+            "allow_submit": true,
+            "list": []
+        },
+        "is_season_display": false,
+        "user_garb": {
+            "url_image_ani_cut": "http://i0.hdslb.com/bfs/garb/item/a7b68d7a49222926d2410fec5e78b511254bb9b3.bin"
+        },
+        "honor_reply": {}
+    }
+}

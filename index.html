@@ -3,21 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="renderer" content="webkit"/>
-    <meta name="force-rendering" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>DragonJay的小铺子</title>
-    <link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css"/>
-    <link rel="stylesheet" href="../node_modules/upvote/dist/upvotejs/upvotejs.css">
+    <link rel="stylesheet" href="../node_modules/mdui/dist/css/mdui.min.css">
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
-    <link rel="stylesheet" href="../node_modules/@fancyapps/ui/dist/fancybox.css"/>
+    <link rel="stylesheet" href="../node_modules/@fancyapps/ui/dist/fancybox.css">
+    <link rel="stylesheet" href="../node_modules/amis/sdk/sdk.css" />
+    <link rel="stylesheet" href="../node_modules/amis/sdk/helper.css" />
     <link href="../node_modules/vuetify/dist/vuetify.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://fastly.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../node_modules/aplayer/dist/APlayer.min.css" />
+    <link rel="stylesheet" href="../node_modules/aplayer/dist/APlayer.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="../node_modules/upvote/dist/upvotejs/upvotejs.vanilla.js"></script>
-    <script src="../node_modules/upvote/dist/upvotejs/upvotejs.jquery.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZE107CW8T"></script>
     <script>
@@ -31,6 +30,9 @@
             crossorigin="anonymous"></script>
     <script src="../node_modules/qrcodejs2/qrcode.js"></script>
     <script src="../node_modules/aplayer/dist/APlayer.min.js"></script>
+    <script src="../node_modules/amis/sdk/sdk.js"></script>
+    <script src="https://unpkg.com/artplayer/dist/artplayer.js"></script>
+    <script src="https://unpkg.com/artplayer-plugin-danmuku/dist/artplayer-plugin-danmuku.js"></script>
     <style>
         video#bgvid {
             position: fixed;
@@ -92,6 +94,10 @@
         .mdui-btn, .mdui-fab {
             text-transform:none
         }
+        .artplayer-app {
+            width: 400px;
+            height: 300px;
+        }
     </style>
 </head>
 <body id="capture" class="mdui-appbar-with-toolbar mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-loaded" style="">
@@ -152,15 +158,6 @@
             </v-skeleton-loader>
             <v-img v-else data-sizes="auto" class="lazyload" src="https://furrysp.top/usr/uploads/800px-lvyunlu.webp"></v-img>
         </div>
-            <div id="pic">
-                <v-skeleton-loader
-                        v-if="loading"
-                        height="94"
-                        type="text"
-                >
-                </v-skeleton-loader>
-                <v-rating v-else></v-rating>
-                </div>
             <div id="pic">
                     <v-skeleton-loader
                             v-if="loading"
@@ -418,52 +415,19 @@
                         </li>
                     </ul>
                     </div>
-            <v-card class="d-inline-block mx-auto">
-                <v-row>
-                    <v-avatar>
-                        <v-img
-                                src="https://img1.doubanio.com/icon/up143172430-61.jpg"
-                        ></v-img>
-                    </v-avatar>
-                    <v-card-title>
-                        Rominwolf
-                    </v-card-title>
-                </v-row>
-                <v-card-subtitle>
-                    来自豆瓣
-                </v-card-subtitle>
-                <v-container>
-                    <v-row justify="space-between">
-                        <v-row
-                                class="flex-column ma-0 fill-height"
-                                justify="center"
-                        >
-                            <v-card-actions>
-                                <div id="basic" class="upvotejs">
-                                    <v-col class="px-0">
-                                        <v-btn class="upvote">
-                                            <i class="mdui-list-item-icon mdui-icon fa-solid fa-angle-up"></i>
-                                        </v-btn>
-                                    </v-col>
-                                    <v-col class="px-0">
-                                        <span class="count">0</span>
-                                    </v-col>
-                                    <v-col class="px-0">
-                                        <v-btn class="downvote">
-                                            <i class="mdui-list-item-icon mdui-icon fa-solid fa-angle-down"></i>
-                                        </v-btn>
-                                    </v-col>
-                                </div>
-                            </v-card-actions>
-                            <v-col cols="auto">
-                                <v-card-text>
-                                    没什么好说的，必须用蓝色修改器支持一下。
-                                </v-card-text>
-                            </v-col>
-                        </v-row>
-                    </v-row>
-                </v-container>
-            </v-card>
+            <div id="pic">
+                <v-skeleton-loader
+                        v-if="loading"
+                        height="94"
+                        type="heading"
+                >
+                </v-skeleton-loader>
+                <v-card-title v-else>
+                    <h3><i class="mdui-list-item-icon mdui-icon fa-duotone fa-video"></i> 视频</h3>
+                </v-card-title>
+            </div>
+            <div class="artplayer-app"></div>
+            <div id="root" class="app-wrapper"></div>
         </v-card>
     </div>
 </div>
@@ -515,22 +479,13 @@
         },
     });
 </script>
-<script>
-    const v1 = Upvote.create('basic');
-</script>
 <footer class="mdui-typo">
     <p>Copyright © 2019 - 2022 <a style="font-weight:600" href="https://furrysp.top/" target="_blank">DragonJay</a></p>
 </footer>
-<div id="templates" class="hidden">
-    <div class="upvotejs">
-        <a class="upvote" title="这个评论针不戳"></a>
-        <span class="count" title="总票数"></span>
-        <a class="downvote" title="无用"></a>
-    </div>
-</div>
-
 <script src="https://fastly.jsdelivr.net/gh/SurpriseLon/Fontawesome-6@main/js/all.js" async=""></script>
+<script src="../lvyunlucommen.js" async=""></script>
 <script src="../lvyunlu.js" async=""></script>
+<script src="../lvyunluvd.js" async=""></script>
 <script src="../node_modules/@fancyapps/ui/dist/fancybox.umd.js" async=""></script>
 <link rel="prefetch" as="script" href="../node_modules/html2canvas/dist/html2canvas.min.js" async="">
 <script src="../node_modules/lazysizes/lazysizes.min.js" async=""></script>
